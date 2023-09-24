@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>536</width>
+    <height>535</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(22, 22, 24);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="BtnAnalisar">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>140</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;Poppins&quot;;
+color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+background-color: rgb(32, 31, 37);</string>
+    </property>
+    <property name="text">
+     <string>Analisar</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="txtb_item">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>190</y>
+      <width>391</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 500 12pt &quot;Poppins&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(32, 31, 37);
+selection-background-color: rgb(36, 8, 68);</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="header_txt_browser">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>20</y>
+      <width>391</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poppins SemiBold</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 600 14pt &quot;Poppins SemiBold&quot;;
+color: rgb(102, 0, 153);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWrapMode">
+     <enum>QTextEdit::WidgetWidth</enum>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="InputItems">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>391</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 500 14pt &quot;Poppins&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(32, 31, 37);
+selection-background-color: rgb(36, 8, 68);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnAnalisar_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>395</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;Poppins&quot;;
+color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+background-color: rgb(32, 31, 37);</string>
+    </property>
+    <property name="text">
+     <string>Item Anterior</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnAnalisar_3">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>395</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;Poppins&quot;;
+color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+background-color: rgb(32, 31, 37);</string>
+    </property>
+    <property name="text">
+     <string>Próximo item</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>536</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
