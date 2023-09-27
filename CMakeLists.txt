@@ -17,8 +17,6 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        azreports_f.h
-        wiki_units.txt
 
 )
 
@@ -26,8 +24,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(AZTests
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        txt_files/wiki_units.txt txt_files/item_path.txt txt_files/non-wiki-arcgis_windows.txt txt_files/wiki_locations.txt txt_files/wiki_maquinas-do-soa.txt txt_files/wiki_serverlist.txt txt_files/wiki_vmwares.txt
+        report_window.ui
+        collect_unit_data.cpp
+        collect_vmware_data.cpp
+        detect_item_type.cpp
+        txt_vetorize.h
 
     )
+
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET AZTests APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
