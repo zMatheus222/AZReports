@@ -33,8 +33,8 @@ Port	Name	Container Name	Unidade	IP
 9201	SRVHVM001MCE	vmware_exporter_mce02	MCE	10.156.81.10
 9202	SRVHVM004MCE	vmware_exporter_mce03	MCE	10.156.81.36
 9203	SRVHVM002PDL	vmware_exporter_pdl02	PDL	10.156.180.10
-9204	SRVHVM001PDL	vmware_exporte_pdl01	PDL	10.156.180.11
-9205		vmware_exporte_pdl03	PDL	10.156.180.160
+9204	SRVHVM001PDL	vmware_exporter_pdl01	PDL	10.156.180.11
+9205		vmware_exporter_pdl03	PDL	10.156.180.160
 9206	SRVHVM01PF	vmware_exporter_pfa01	PFA	10.156.50.10
 9207	SRVHVM002PFA	vmware_exporter_pfa02	PFA	10.156.50.15
 9208	SRVHVM001RCO	vmware_exporter_rco01	RCO	10.156.174.51

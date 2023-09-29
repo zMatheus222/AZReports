@@ -11,7 +11,7 @@ inline vector<QString> collect_servidores_data(QString item, vector<QString> wik
     qDebug() << "entered collect_servidor_data -> item: " << item << "\n";
 
     //empty é apenas uma vector sem nada. que será retornada caso de um problema.
-    vector<QString> empty = {"Empty"};
+    vector<QString> empty = {"collect_servidores_data::Empty"};
 
     //unidade_do_item conterá todo o conteúdo que será retornado.
     vector<QString> servidor_do_item;
@@ -24,7 +24,7 @@ inline vector<QString> collect_servidores_data(QString item, vector<QString> wik
     */
 
     //regex que detecta linha da unidade e salva itens dentro de ()
-    regex rgx_servidor("^([0-9]+.[0-9]+.[0-9]+.[0-9]+.)\t?([A-Za-z]+[0-9]+[A-Za-z]+)\t(.*)");
+    regex rgx_servidor("^([0-9]+.[0-9]+.[0-9]+.[0-9]+)\t?([A-Za-z]+[0-9]+[A-Za-z]+)\t(.*)");
     smatch smatch_servidor;
 
     qDebug() << "entered pre-string& line : wiki_servidores\n";
@@ -44,19 +44,17 @@ inline vector<QString> collect_servidores_data(QString item, vector<QString> wik
             smatch_count++;
         }
 
-        qDebug() << "smatch_count: " << smatch_count << "\n";
-
         //ir de 1 em 1 nos itens da smatch, e comparar com o item passado. não começamos por 0 afinal na smatch, 0 tem toda correspondencia regex.
         for(int i = 1; i <= smatch_count ; i++){
 
             //gerar string 'sma' baseada na smatch_unidade[i] < i = int i do for.
             string sma = smatch_servidor[i];
-            qDebug() << "item: " << conv_item << "| smatch_servidor[" << i << "]: " << sma << "\n";
+            qDebug() << "for smatch_count[" << i << "]" << sma;
 
             //se o elemento que foi passado no 'item' der match com um dos itens do smatch.
             if(conv_item == smatch_servidor[i]){
 
-                qDebug() << "Foi encontrado o item desejado. adicionando elementos ao vetor servidor_do_item.\n";
+                qDebug() << "servidores::Foi encontrado o item desejado. adicionando elementos ao vetor servidor_do_item.\n";
 
                 //salvar todos os elementos do smatch no vector.
                 for(const auto line : smatch_servidor){

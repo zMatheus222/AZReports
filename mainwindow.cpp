@@ -50,28 +50,18 @@ MainWindow::~MainWindow()
     //variavel que ira ser exibida no programa.
     QString to_user_display_text;
 
-    qDebug() << "item_type: " << item_type << "\n";
-
     //detectar o tipo do item, então escolher a função referente a ela.
     if(item_type == "unidade"){
 
-        qDebug() << "entered if - item_type: unidade";
         //chamar funcao que retornara as informacoes do item digitado
         unit_data = collect_unit_data(item, wiki_units, wiki_vmwares);
 
         //strings unicas para cada um dos itens
-        QString sep_unit_full = unit_data[0];
+        //QString sep_unit_full = unit_data[0];
         QString sep_unit_hname = unit_data[1];
         QString sep_unit_shortloc = unit_data[2];
         QString sep_unit_ip = unit_data[3];
         QString sep_unit_fullloc = unit_data[4];
-
-        qDebug() << "unit_data:\n";
-        qDebug() << "[0]unit_full: " << sep_unit_full << "\n";
-        qDebug() << "[1]unit_name:" << sep_unit_hname << "\n";
-        qDebug() << "[2]unit_shortloc:" << sep_unit_shortloc << "\n";
-        qDebug() << "[3]unit_ip:" << sep_unit_ip << "\n";
-        qDebug() << "[4]unit_full_loc:" << sep_unit_fullloc << "\n";
 
         //conta quantos itens tem no vector
         int data_size = unit_data.size();
@@ -92,8 +82,6 @@ MainWindow::~MainWindow()
             count++;
         }
 
-        qDebug() << "entered data_size == 5\n";
-
         //exibir os itens da Unidade + lista de vmwares desta unidade.
         to_user_display_text = "<span style='color: orange;'>Informações da Unidade:</span>";
         to_user_display_text += "\nNome: <span style='color: #90EE90; font-weight: bold;'>" + sep_unit_hname + "</span>\n";
@@ -104,32 +92,20 @@ MainWindow::~MainWindow()
         //substituir os \n da string acima por <br>
         to_user_display_text.replace("\n", "<br>");
 
-
-        qDebug() << "mainwindow.cpp::unit_vmwares:\n" << unit_vmwares;
-
     }
     else if(item_type == "vmware"){
 
-        qDebug() << "entered if - item_type: vmware";
         //chamar funcao que retornara as informacoes do item digitado
         vmware_data = collect_vmware_data(item, wiki_vmwares);
 
         //strings unicas para cada um dos itens
-        QString sep_vmware_full = vmware_data[0];
+        //QString sep_vmware_full = vmware_data[0];
         QString sep_vmware_port = vmware_data[1];
         QString sep_vmware_hname = vmware_data[2];
         QString sep_vmware_container_name = vmware_data[3];
         QString sep_vmware_shortloc = vmware_data[4];
         QString sep_vmware_ip = vmware_data[5];
         QString sep_vmware_machine = vmware_data[6];
-
-        qDebug() << "vmware_data:\n";
-        qDebug() << "[0]vmware_full: " << sep_vmware_full << "\n";
-        qDebug() << "[1]sep_vmware_port:" << sep_vmware_port << "\n";
-        qDebug() << "[2]sep_vmware_hname:" << sep_vmware_hname << "\n";
-        qDebug() << "[3]sep_vmware_container_name:" << sep_vmware_container_name << "\n";
-        qDebug() << "[4]sep_vmware_shortloc:" << sep_vmware_shortloc << "\n";
-        qDebug() << "[5]sep_vmware_ip:" << sep_vmware_ip << "\n";
 
         //exibir os itens do servidor
         to_user_display_text = "<span style='color: orange;'>Informações da VMWare:</span>";
@@ -146,21 +122,14 @@ MainWindow::~MainWindow()
     }
     else if(item_type == "servidor"){
 
-        qDebug() << "entered if - item_type: servidores";
         //chamar funcao que retornara as informacoes do item digitado
         servidores_data = collect_servidores_data(item, wiki_servidores);
 
         //strings unicas para cada um dos itens
-        QString sep_servidor_full = servidores_data[0];
+        //QString sep_servidor_full = servidores_data[0];
         QString sep_servidor_ip = servidores_data[1];
         QString sep_servidor_hname = servidores_data[2];
         QString sep_servidor_descr = servidores_data[3];
-
-        qDebug() << "servidor_data:\n";
-        qDebug() << "[0]servidor_full: " << sep_servidor_full << "\n";
-        qDebug() << "[1]sep_servidor_ip:" << sep_servidor_ip << "\n";
-        qDebug() << "[2]sep_servidor_hname:" << sep_servidor_hname << "\n";
-        qDebug() << "[3]sep_servidor_descr:" << sep_servidor_descr << "\n";
 
         //exibir os itens do servidor
         to_user_display_text = "<span style='color: orange;'>Informações do Servidor:</span>";

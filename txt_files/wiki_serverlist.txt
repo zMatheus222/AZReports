@@ -10,4 +10,4 @@
 10.180.53.203	SRVOBS016OCI	Servidor do Prometheus Geral Prod, Alermanager, Grafana	9090/9093/3000
 10.180.52.235	SRVOBS017OCI	Elastic de Prod/ Servidor Grafana	5601
 10.180.68.4	SRVOBS004OCI	Private Location DEV	
-10.180.54.231	SRVOBS018OCI	Private Location PRD	
+10.180.54.231	SRVOBS018OCI	Private Location PRD

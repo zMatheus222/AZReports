@@ -28,25 +28,23 @@ inline vector<QString> pick_unit_vmwares(QString short_loc, vector<QString> wiki
 
         QString var_smatch = QString::fromStdString(smatch_vmware[4]);
 
-        qDebug() << "\nline: " << conv_line << "short_loc::" << short_loc << " | var_smatch[4]:: " << var_smatch << "\n";
+        //qDebug() << "pick_unit_vmwares:: pre-if - short_loc: " << short_loc << " | var_smatch: " << var_smatch;
 
         if(short_loc == var_smatch){
 
-            qDebug() << "entered if::short_loc::varsmatch\nshort_loc: " << short_loc << "\nvar_smatch: " << var_smatch << "\n";
+            //qDebug() << "pick_unit_vmwares:: entered on if short_loc==var_smatch";
 
             //criar QString convertida de uma string normal
             QString vmware_name = QString::fromStdString(smatch_vmware[2]);
 
             vector<QString> vmware_do_item = collect_vmware_data(vmware_name, wiki_vmwares);
 
-            for(QString& line : vmware_do_item){
-                qDebug() << "QString::line::vmware_do_item: " << line << "\n";
-            }
-
             QString vmware_port = vmware_do_item[1];
             QString vmware_container = vmware_do_item[3];
             QString vmware_ip = vmware_do_item[5];
             QString vmware_machine = vmware_do_item[6];
+
+            //qDebug() << "entered if::short_loc::varsmatch\nshort_loc: " << short_loc << "\nvar_smatch: " << var_smatch << "\nmachine: " << vmware_machine << "\n";
 
             unit_vmwares.push_back("Nome: <span style='color: #41c4f4; font-weight: bold;'>" + vmware_name + "</span>\ncontainer: " + vmware_container + "\nIp: " + vmware_ip + "\nMaquina: " + vmware_machine + "\n");
 
@@ -104,19 +102,16 @@ inline vector<QString> collect_unit_data(QString item, vector<QString> wiki_unit
             smatch_count++;
         }
 
-        qDebug() << "smatch_count: " << smatch_count << "\n";
-
         //ir de 1 em 1 nos itens da smatch, e comparar com o item passado. não começamos por 0 afinal na smatch, 0 tem toda correspondencia regex.
         for(int i = 1; i <= smatch_count ; i++){
 
             //gerar string 'sma' baseada na smatch_unidade[i] < i = int i do for.
-            string sma = smatch_unidade[i];
-            qDebug() << "item: " << conv_item << "| smatch_unidade[" << i << "]: " << sma << "\n";
+            //string sma = smatch_unidade[i];
 
             //se o elemento que foi passado no 'item' der match com um dos itens do smatch.
             if(conv_item == smatch_unidade[i]){
 
-                qDebug() << "Foi encontrado o item desejado. adicionando elementos ao vetor unidade_do_item.\n";
+                qDebug() << "unit_data::Foi encontrado o item desejado. adicionando elementos ao vetor unidade_do_item.\n";
 
                 //salvar todos os elementos do smatch no vector.
                 for(const auto line : smatch_unidade){
@@ -124,11 +119,7 @@ inline vector<QString> collect_unit_data(QString item, vector<QString> wiki_unit
                     QString conv_line = QString::fromStdString(line);
                     unidade_do_item.push_back(conv_line);
 
-                    qDebug() << "for::const::auto::conv_line: " << conv_line << "\n";
-
                 }
-
-                qDebug() << "return unidade do item: " << unidade_do_item << "\n";
 
                 //coletar vmwares relacionadas a unidade
 
