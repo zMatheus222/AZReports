@@ -8,13 +8,15 @@
 
 using namespace std;
 
-inline vector<string> txt_vetorize(string file_name){
+inline vector<QString> txt_vetorize(QString file_name){
+
+    string conv_file_name = file_name.toStdString();
 
     qDebug() << "file_name: " << file_name << "\n";
 
-    vector<string> coleted_itens;
+    vector<QString> coleted_itens;
 
-    ifstream txt_file(file_name);
+    ifstream txt_file(conv_file_name);
 
     if(txt_file.is_open()){
         qDebug() << "arquivo: " << file_name << "foi aberto corretamente.\n";
@@ -25,7 +27,9 @@ inline vector<string> txt_vetorize(string file_name){
 
     string actual_line;
     while(getline(txt_file, actual_line)){
-        coleted_itens.push_back(actual_line);
+
+        QString conv_actual_line = QString::fromStdString(actual_line);
+        coleted_itens.push_back(conv_actual_line);
     }
 
     return coleted_itens;

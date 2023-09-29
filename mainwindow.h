@@ -15,6 +15,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+//para poder recarregar estas vectors em mainwindow
+private:
+    std::vector<QString> wiki_units;
+    std::vector<QString> wiki_vmwares;
+    std::vector<QString> wiki_servidores;
+
 private slots:
     void on_BtnAnalisar_clicked();
 

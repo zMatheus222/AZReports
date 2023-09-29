@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
-    <height>536</height>
+    <width>737</width>
+    <height>666</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <widget class="QPushButton" name="BtnAnalisar">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>325</x>
       <y>140</y>
       <width>91</width>
       <height>31</height>
@@ -41,8 +41,8 @@ background-color: rgb(32, 31, 37);</string>
      <rect>
       <x>70</x>
       <y>190</y>
-      <width>391</width>
-      <height>191</height>
+      <width>601</width>
+      <height>351</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -55,9 +55,9 @@ selection-background-color: rgb(255, 170, 0);</string>
    <widget class="QTextBrowser" name="header_txt_browser">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>170</x>
       <y>20</y>
-      <width>391</width>
+      <width>393</width>
       <height>51</height>
      </rect>
     </property>
@@ -86,7 +86,7 @@ color: rgb(95, 15, 255);</string>
    <widget class="QTextEdit" name="InputItems">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>175</x>
       <y>80</y>
       <width>391</width>
       <height>39</height>
@@ -103,7 +103,7 @@ selection-background-color: rgb(255, 170, 0);</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>395</y>
+      <y>570</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -121,8 +121,8 @@ background-color: rgb(32, 31, 37);</string>
    <widget class="QPushButton" name="BtnAnalisar_3">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>395</y>
+      <x>580</x>
+      <y>570</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -143,7 +143,7 @@ background-color: rgb(32, 31, 37);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>536</width>
+     <width>737</width>
      <height>21</height>
     </rect>
    </property>

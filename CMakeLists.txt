@@ -27,10 +27,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         txt_files/wiki_units.txt txt_files/item_path.txt txt_files/non-wiki-arcgis_windows.txt txt_files/wiki_locations.txt txt_files/wiki_maquinas-do-soa.txt txt_files/wiki_serverlist.txt txt_files/wiki_vmwares.txt
         report_window.ui
         collect_unit_data.cpp
-        collect_vmware_data.cpp
         detect_item_type.cpp
         txt_vetorize.h
-
+        collect_vmware_data.h
+        collect_servidores_data.cpp
     )
 
 # Define target properties for Android with Qt 6 as:

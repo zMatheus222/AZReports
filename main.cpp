@@ -1,5 +1,11 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <vector>
+#include <string>
+
+//#include "txt_vetorize.h"
+
+using namespace std;
 
 int main(int argc, char *argv[]){
 

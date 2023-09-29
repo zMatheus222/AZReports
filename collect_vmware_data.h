@@ -1,3 +1,6 @@
+#ifndef COLLECT_VMWARE_DATA_H
+#define COLLECT_VMWARE_DATA_H
+
 #include <vector>
 #include <string>
 #include <QDebug>
@@ -5,7 +8,7 @@
 
 using namespace std;
 
-inline vector<QString> collect_vmware_data(string item, vector<string> wiki_vmwares){
+inline vector<QString> collect_vmware_data(QString item, vector<QString> wiki_vmwares){
 
     //apenas um vector vazio para retornar nada (se isso for retornado é um problema)
     vector<QString> empty = {"Empty"};
@@ -25,7 +28,6 @@ inline vector<QString> collect_vmware_data(string item, vector<string> wiki_vmwa
     }
     */
 
-
     //regex que vai ajudar a detectar a maquina que a vmware está
     regex rgx_vm_machine("M(?:[\\]?[A-Za-z]+[0-9]+[\\][A-Za-z]+[0-9]+[A-Za-z]+)?(?:[á-úA-Za-z]+)?\\s+([0-9]+)");
     smatch smatch_vm_machine;
@@ -36,15 +38,19 @@ inline vector<QString> collect_vmware_data(string item, vector<string> wiki_vmwa
 
 
     //passar de 1 em 1 nos itens da wiki_vmwares
-    for(string& line : wiki_vmwares){
+    for(QString& line : wiki_vmwares){
+
+        //converter QString em string pois o regex não lê QString
+        string conv_line = line.toStdString();
+        string conv_item = item.toStdString();
 
         qDebug() << "line::vmwares: " << line << "\nitem: " << item << "\n";
 
         //pegar de qual maquina esta vmware faz parte//rgx_sch_matched_machine recebe true ou false dependendo se deu match ou não
-        bool rgx_sch_matched_machine = regex_search(line, smatch_vm_machine, rgx_vm_machine);
+        bool rgx_sch_matched_machine = regex_search(conv_line, smatch_vm_machine, rgx_vm_machine);
 
         //separar itens de cada vmware na smatch baseado na regex e retornar verdadeiro ou falso se bateu a linha com a regex de vmware
-        bool rgx_sch_matched_vmware = regex_search(line, smatch_vmware, rgx_vmware);
+        bool rgx_sch_matched_vmware = regex_search(conv_line, smatch_vmware, rgx_vmware);
 
         //se estivermos em uma linha onde possui "Máquina 78", ative este if para salvar a maquina, se for outro tipo de linha não salvamos, e o valor da ultima maquina encontrada fica armazenado.
         if(rgx_sch_matched_machine == true){
@@ -71,7 +77,7 @@ inline vector<QString> collect_vmware_data(string item, vector<string> wiki_vmwa
                 qDebug() << "for::smatch_count: entered for int i[" << i << "]\n";
 
                 //se o elemento que foi passado no 'item' der match com algum dos itens do smatch.
-                if(item == smatch_vmware[i]){
+                if(conv_item == smatch_vmware[i]){
 
                     string sma_v1 = smatch_vmware[i];
                     qDebug() << "entered if::item::smatch_vmware[i]: " << sma_v1 << "\n";
@@ -114,3 +120,6 @@ inline vector<QString> collect_vmware_data(string item, vector<string> wiki_vmwa
 
     return empty;
 }
+
+
+#endif // COLLECT_VMWARE_DATA_H
