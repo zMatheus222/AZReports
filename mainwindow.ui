@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>737</width>
-    <height>666</height>
+    <height>796</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -135,6 +135,33 @@ background-color: rgb(32, 31, 37);</string>
     </property>
     <property name="text">
      <string>Próximo item</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BtnAction">
+    <property name="geometry">
+     <rect>
+      <x>297</x>
+      <y>670</y>
+      <width>151</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poppins</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Poppins&quot;;
+color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+background-color: rgb(32, 31, 37);</string>
+    </property>
+    <property name="text">
+     <string>Executar ação</string>
     </property>
    </widget>
   </widget>

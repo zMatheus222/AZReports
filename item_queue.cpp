@@ -24,7 +24,7 @@ inline vector<QString> item_queue(vector<QString> item_list, vector<QString> wik
         string conv_actual_item = actual_item.toStdString();
 
         //chamar funcao para detectar o tipo do item
-        string item_type = detect_item_type(actual_item, wiki_units, wiki_vmwares, wiki_servidores);
+        QString item_type = detect_item_type(actual_item, wiki_units, wiki_vmwares, wiki_servidores);
 
         //variavel que ira ser exibida no programa.
         QString to_user_display_text;

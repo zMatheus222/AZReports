@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "report_window.h"
 #include <QDebug>
 #include <QString>
 #include <thread>
@@ -7,6 +8,10 @@
 #include "./ui_mainwindow.h"
 #include "item_queue.cpp"
 #include "txt_vetorize.h"
+
+//vector que irá armazenar todos os itens digitados pelo usuário.
+std::vector<QString> item_list;
+int count_change = 0;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->header_txt_browser->setText("AZReports - Analise");
     //ui->header_txt_browser->selectAll(); //destaca o texto inteiro, tornando-o pronto para ser modificado de alguma forma
     ui->header_txt_browser->setAlignment(Qt::AlignCenter); //alinha o texto selecionado
+
 }
 
 MainWindow::~MainWindow()
@@ -75,9 +81,9 @@ void MainWindow::on_BtnAnalisar_clicked(){
     //exibir vector conforme o botão é apertado, ou seja proximo avança um numero e anterior volta um numero
     item_list = item_queue(digited_item_list, wiki_units, wiki_vmwares, wiki_servidores);
 
-    qDebug() << "\nQString& actual_item : item_list : count: " << count;
+    qDebug() << "\nQString& actual_item : item_list : count: " << count_change;
     for(QString& actual_item : item_list){
-        qDebug() << actual_item << "\n";
+        qDebug() << "actualline: " << actual_item << "\n";
     }
 
     updateDisplay();
@@ -87,25 +93,39 @@ void MainWindow::on_BtnAnalisar_clicked(){
 //atualizar na tela as informações, com base no size e conteudo do vector
 void MainWindow::updateDisplay() {
 
-    if (count >= 0 && count < item_list.size()) {
-        ui->txtb_item->setText(item_list[count]);
+    if (count_change >= 0 && count_change < item_list.size()) {
+        ui->txtb_item->setText(item_list[count_change]);
     }
 
 }
 
 //quando o botão proximo for clicado aumentar um valor
 void MainWindow::on_BtnNext_clicked() {
-    if (count < item_list.size() - 1) {
-        ++count;
+    if (count_change < item_list.size() - 1) {
+        ++count_change;
         updateDisplay();
     }
 }
 
 //quando o botão anterior for clicado diminuir um valor
 void MainWindow::on_BtnPrev_clicked() {
-    if (count > 0) {
-        --count;
+    if (count_change > 0) {
+        --count_change;
         updateDisplay();
     }
+}
+
+//quando o botão executar ação for clicado
+void MainWindow::on_BtnAction_clicked() {
+
+    // Crie uma instância da janela
+    ReportWindow *reportWindow = new ReportWindow();
+
+    // Configura para ser excluído quando fechado
+    reportWindow->setAttribute(Qt::WA_DeleteOnClose);
+
+    // Mostre a janela
+    reportWindow->show();
+
 }
 

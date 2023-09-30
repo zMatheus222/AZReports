@@ -5,7 +5,7 @@
 using namespace std;
 
 //função que ira retornar o tipo do item
-inline string detect_item_type(QString item, vector<QString> wiki_units, vector<QString> wiki_vmwares, vector<QString> wiki_servidores){
+inline QString detect_item_type(QString item, vector<QString> wiki_units, vector<QString> wiki_vmwares, vector<QString> wiki_servidores){
 
     string item_type;
     //loop para cada tipo, o item será passado de for em for até encontrar o seu, que retornara o tipo.
