@@ -15,9 +15,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //[recarregando vectors feito processo "private" em mainwindow.h] vector que vai coletar as linhas do arquivo .txt + caminho do arquivo .txt
-    wiki_units = txt_vetorize("D:\\USE\\Projects\\C++\\AZTests\\txt_files\\wiki_units.txt");
-    wiki_vmwares = txt_vetorize("D:\\USE\\Projects\\C++\\AZTests\\txt_files\\wiki_vmwares.txt");
-    wiki_servidores = txt_vetorize("D:\\USE\\Projects\\C++\\AZTests\\txt_files\\wiki_serverlist.txt");
+    //wiki_units = txt_vetorize("D:\\USE\\Projects\\C++\\AZTests\\txt_files\\wiki_units.txt");
+    //wiki_vmwares = txt_vetorize("D:\\USE\\Projects\\C++\\AZTests\\txt_files\\wiki_vmwares.txt");
+    //wiki_servidores = txt_vetorize("D:\\USE\\Projects\\C++\\AZTests\\txt_files\\wiki_serverlist.txt");
+
+    wiki_units = txt_vetorize(CURRENT_SOURCE_DIR "/txt_files/wiki_units.txt");
+    wiki_vmwares = txt_vetorize(CURRENT_SOURCE_DIR "/txt_files/wiki_vmwares.txt");
+    wiki_servidores = txt_vetorize(CURRENT_SOURCE_DIR "/txt_files/wiki_serverlist.txt");
 
     ui->header_txt_browser->setText("AZReports - Analise");
     //ui->header_txt_browser->selectAll(); //destaca o texto inteiro, tornando-o pronto para ser modificado de alguma forma

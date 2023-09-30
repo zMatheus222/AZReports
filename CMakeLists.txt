@@ -32,6 +32,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         collect_vmware_data.h
         collect_servidores_data.cpp
         item_queue.cpp
+        icon/azr-icon.ico
     )
 
 # Define target properties for Android with Qt 6 as:
@@ -78,3 +79,6 @@ install(TARGETS AZTests
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(AZTests)
 endif()
+
+message("CMAKE_CURRENT_SOURCE_DIR is: ${CMAKE_CURRENT_SOURCE_DIR}")
+add_definitions(-DCURRENT_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
