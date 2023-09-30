@@ -86,9 +86,9 @@ color: rgb(95, 15, 255);</string>
    <widget class="QTextEdit" name="InputItems">
     <property name="geometry">
      <rect>
-      <x>175</x>
+      <x>70</x>
       <y>80</y>
-      <width>391</width>
+      <width>601</width>
       <height>39</height>
      </rect>
     </property>
@@ -99,7 +99,7 @@ background-color: rgb(32, 31, 37);
 selection-background-color: rgb(255, 170, 0);</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="BtnAnalisar_2">
+   <widget class="QPushButton" name="BtnPrev">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -118,7 +118,7 @@ background-color: rgb(32, 31, 37);</string>
      <string>Item Anterior</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="BtnAnalisar_3">
+   <widget class="QPushButton" name="BtnNext">
     <property name="geometry">
      <rect>
       <x>580</x>

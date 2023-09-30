@@ -20,7 +20,7 @@ inline string detect_item_type(QString item, vector<QString> wiki_units, vector<
 
         //se o item for igual ao nome ou ip da unidade
         if((conv_item == smatch_unit[1])||(conv_item == smatch_unit[2])){
-            qDebug() << "returned item_type: unidade\n";
+            qDebug() << "returned item_type: unidade | item:" << item << "\n";
             return "unidade";
         }
     }
@@ -42,7 +42,7 @@ inline string detect_item_type(QString item, vector<QString> wiki_units, vector<
 
         //se o item for igual ao nome ou ip da unidade
         if((conv_item == smatch_vmware[2])||(conv_item == smatch_vmware[3])||(conv_item == smatch_vmware[5])){
-            qDebug() << "returned item_type: vmware\n";
+            qDebug() << "returned item_type: vmware | item:" << item << "\n";
             return "vmware";
         }
     }
@@ -57,7 +57,7 @@ inline string detect_item_type(QString item, vector<QString> wiki_units, vector<
 
         //se o item for igual ao nome ou ip da unidade
         if((conv_item == smatch_unit[1])||(conv_item == smatch_unit[2])){
-            qDebug() << "returned item_type: servidor\n";
+            qDebug() << "returned item_type: servidor | item:" << item << "\n";
             return "servidor";
         }
     }

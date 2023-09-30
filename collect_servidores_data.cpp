@@ -49,7 +49,7 @@ inline vector<QString> collect_servidores_data(QString item, vector<QString> wik
 
             //gerar string 'sma' baseada na smatch_unidade[i] < i = int i do for.
             string sma = smatch_servidor[i];
-            qDebug() << "for smatch_count[" << i << "]" << sma;
+            //qDebug() << "for smatch_count[" << i << "]" << sma;
 
             //se o elemento que foi passado no 'item' der match com um dos itens do smatch.
             if(conv_item == smatch_servidor[i]){

@@ -31,6 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         txt_vetorize.h
         collect_vmware_data.h
         collect_servidores_data.cpp
+        item_queue.cpp
     )
 
 # Define target properties for Android with Qt 6 as:

@@ -21,8 +21,16 @@ private:
     std::vector<QString> wiki_vmwares;
     std::vector<QString> wiki_servidores;
 
+    //vector que irá armazenar todos os itens digitados pelo usuário.
+    std::vector<QString> item_list;
+
+    int count = 0;
+
 private slots:
     void on_BtnAnalisar_clicked();
+    void on_BtnNext_clicked();
+    void on_BtnPrev_clicked();
+    void updateDisplay();
 
 private:
     Ui::MainWindow *ui;
